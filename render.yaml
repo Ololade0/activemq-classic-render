@@ -4,11 +4,6 @@ services:
     env: docker
     plan: free
     dockerfilePath: Dockerfile
-    envVars:
-      - key: ACTIVEMQ_ADMIN_LOGIN
-        value: admin
-      - key: ACTIVEMQ_ADMIN_PASSWORD
-        value: admin
     ports:
       - port: 61616
         protocol: tcp
