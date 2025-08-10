@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: activemq-classic
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: ACTIVEMQ_ADMIN_LOGIN
+        value: admin
+      - key: ACTIVEMQ_ADMIN_PASSWORD
+        value: admin
