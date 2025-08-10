@@ -1,5 +1,7 @@
-# ActiveMQ Classic 6.1.7 (official Apache image)
 FROM apache/activemq-classic:6.1.7
 
-# Expose JMS broker port and Web Console port
+# Copy our custom config
+COPY conf/activemq.xml /opt/apache-activemq/conf/activemq.xml
+COPY conf/jetty-realm.properties /opt/apache-activemq/conf/jetty-realm.properties
+
 EXPOSE 61616 8161

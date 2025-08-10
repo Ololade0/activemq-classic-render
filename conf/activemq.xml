@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Broker definition -->
+    <broker xmlns="http://activemq.apache.org/schema/core"
+            brokerName="localhost"
+            dataDirectory="${activemq.data}">
+
+        <!-- Limit memory usage for free tier -->
+        <systemUsage>
+            <systemUsage>
+                <memoryUsage>
+                    <memoryUsage limit="64 mb"/>
+                </memoryUsage>
+                <storeUsage>
+                    <storeUsage limit="128 mb"/>
+                </storeUsage>
+                <tempUsage>
+                    <tempUsage limit="64 mb"/>
+                </tempUsage>
+            </systemUsage>
+        </systemUsage>
+
+        <!-- Transport connectors -->
+        <transportConnectors>
+            <!-- Core JMS -->
+            <transportConnector name="openwire" uri="tcp://0.0.0.0:61616"/>
+            <!-- Web console -->
+            <transportConnector name="web" uri="http://0.0.0.0:8161"/>
+        </transportConnectors>
+
+    </broker>
+
+</beans>
