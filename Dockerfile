@@ -1,5 +1,5 @@
-# ActiveMQ Classic 6.1.7
-FROM rmohr/activemq:6.1.7
+# ActiveMQ Classic 6.1.7 (official Apache image)
+FROM apache/activemq-classic:6.1.7
 
-# Expose broker (JMS) and web console ports
+# Expose JMS broker port and Web Console port
 EXPOSE 61616 8161
