@@ -15,12 +15,20 @@
                 persistent="false"
                 dataDirectory="${activemq.data}">
 
-        <!-- Transport connectors -->
+        <!-- Messaging connectors -->
         <amq:transportConnectors>
             <amq:transportConnector name="openwire" uri="tcp://0.0.0.0:61616"/>
-            <amq:transportConnector name="webconsole" uri="http://0.0.0.0:8161"/>
+            <!-- Web console HTTP connector -->
+            <amq:transportConnector name="web" uri="http://0.0.0.0:8161"/>
         </amq:transportConnectors>
 
     </amq:broker>
+
+    <!-- Enable the embedded Jetty web console -->
+    <bean id="jetty" class="org.apache.activemq.web.WebConsoleJettyServer">
+        <property name="port" value="8161"/>
+        <property name="host" value="0.0.0.0"/>
+        <property name="jettyConfig" value="${activemq.conf}/jetty.xml"/>
+    </bean>
 
 </beans>
