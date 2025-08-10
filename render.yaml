@@ -9,3 +9,8 @@ services:
         value: admin
       - key: ACTIVEMQ_ADMIN_PASSWORD
         value: admin
+    ports:
+      - port: 61616
+        protocol: tcp
+      - port: 8161
+        protocol: http

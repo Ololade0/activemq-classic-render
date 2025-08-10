@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:amq="http://activemq.apache.org/schema/core"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -15,10 +14,9 @@
                 persistent="false"
                 dataDirectory="${activemq.data}">
 
-        <!-- Transport connectors -->
+        <!-- TCP connector for Spring Boot -->
         <amq:transportConnectors>
             <amq:transportConnector name="openwire" uri="tcp://0.0.0.0:61616"/>
-            <amq:transportConnector name="webconsole" uri="http://0.0.0.0:8161"/>
         </amq:transportConnectors>
 
     </amq:broker>
