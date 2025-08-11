@@ -15,12 +15,9 @@
                 persistent="false"
                 dataDirectory="${activemq.data}">
 
-        <!-- Transport connectors -->
+        <!-- Only JMS messaging connector, no web console -->
         <amq:transportConnectors>
-            <!-- JMS messaging -->
             <amq:transportConnector name="openwire" uri="tcp://0.0.0.0:61616"/>
-            <!-- Web console bound to Render's dynamic PORT -->
-            <amq:transportConnector name="webconsole" uri="http://0.0.0.0:${env.PORT}"/>
         </amq:transportConnectors>
 
     </amq:broker>
