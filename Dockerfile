@@ -1,7 +1,7 @@
 FROM apache/activemq-classic:6.1.7
 
-COPY conf /opt/apache-activemq/conf
+# Expose broker (JMS) and web console ports
+EXPOSE 61616 8161
 
-EXPOSE 61616
-
+# Start ActiveMQ broker in console mode (foreground)
 CMD ["/opt/apache-activemq/bin/activemq", "console"]
