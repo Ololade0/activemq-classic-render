@@ -1,3 +1,5 @@
-FROM rmohr/activemq
+FROM rmohr/activemq:latest
 
-EXPOSE 61616 8161
+COPY activemq.xml /opt/activemq/conf/activemq.xml
+
+EXPOSE 5672
