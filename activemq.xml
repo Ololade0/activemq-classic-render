@@ -10,6 +10,7 @@
 
         <!-- Configure transport connectors -->
         <transportConnectors>
+            <transportConnector name="openwire" uri="tcp://0.0.0.0:61616"/>
             <transportConnector name="amqp" uri="amqp://0.0.0.0:5672?maxFrameSize=104857600"/>
             <!-- Add other connectors here if needed -->
         </transportConnectors>
